@@ -5,7 +5,7 @@ This article will help you to get up and running with *apiman*, an open-source A
 === Apiman overview
 
 APIs are becoming pervasive in the modern enterprise. External facing APIs allow 3rd party access to your company's content and services, while the trend towards microservices 
-results in loosely coupled services, connected by multiple internal APIs. Using an API gateway helps you to centralize the management of your APIs, providing support for common features such as security, qoutas, logging and caching.
+results in loosely coupled services, connected by multiple internal APIs. Using an API gateway helps you to centralize the management of your APIs, providing support for common features such as security, quotas, logging and caching.
 
 http://www.apiman.io[Apiman] is an open-source, API management software offering that simplifies the control, distribution and monitoring of your APIs. It consists of two main components:
 
@@ -20,7 +20,7 @@ The apiman software provides support for multiple policy rules that can be combi
 * Limiting access using rate-limiting for fine-grained control, quotas for longer periods, and transfer qoutas for data-intensive operations
 * Enabling/disabling access to subsets of an API
 * Logging and caching 
-* Enabling/disabling access from specific IP adresses
+* Enabling/disabling access from specific IP addresses
 
 
 === Advantages of apiman
@@ -56,11 +56,11 @@ Use the following steps to download and configure the WildFly software:
 +
 [source]
 ----
-cd ~/wildfly-10.1.0.Final
-./bin/add-user.sh -u user1 -p password1
+$ cd ~/wildfly-10.1.0.Final
+$ ./bin/add-user.sh -u user1 -p password1
 ----
 +
-If you are running Windows, you should use the `add-user.bat` or `add-user.ps1` script as appropriate.
+If you are running Windows, you should use the `add-user.bat` or the `add-user.ps1` script, as appropriate.
 
 === Installing apiman
 
@@ -106,7 +106,8 @@ If the server has started up correctly, you should see the address of the WildFl
 NOTE: Server logs are available at +
 `~/wildfly-10.1.0.Final/standalone/log/server.log`.
 
-To confirm that WildFly has started up correctly, navigate to http://127.0.0.1:9990 in your browser and log on with the credentials you specified when running the `add-user` script earlier. Check that the apiman software has been deployed correctly by navigating to the page http://127.0.0.1:9990/console/App.html#standalone-deployments.
+To confirm that WildFly has started up correctly, navigate to http://127.0.0.1:9990 in your browser and log in with the credentials you specified when running the `add-user` script earlier. Check that the apiman software has been deployed correctly by navigating to the page +
+http://127.0.0.1:9990/console/App.html#standalone-deployments.
 
 
 Access the apiman user interface by navigating to http://127.0.0.1:8080/apimanui and logging in with the default credentials:
@@ -252,7 +253,7 @@ From the ProviderOrg page, click on the "APIs" tab and create a new API with the
 
 ==== Configure the API implementation
 
-On the "Implementation" tab for the API, configure the details of the real API being managed as shown below and then save the implemntation:
+On the "Implementation" tab for the API, configure the details of the real API being managed, as shown below, and then save the implementation:
 
 * *API Endpoint:* http://localhost:8080/apiman-echo
 * *API Type:* REST (default)
@@ -319,10 +320,10 @@ a summary of the contract details:
 
 == Consume the API
 
-Once you have registered the client application with the gateway, you are ready to test that the client can access the API through the gateway, and that the Gold policy is enforced correctly.
+Once you have registered the client application with the gateway, you are ready to test that the client can access the API through the gateway, and that the Gold policy is being enforced correctly.
 
 
-. Naviagate from the ConsumerApp page to the EchoApp page, and then access the "APIs" tab to list details of the APIs that the client can consume.
+. Navigate from the ConsumerApp page to the EchoApp page, and then access the "APIs" tab to list details of the APIs that the client can consume.
 +
 --
 Alternatively, navigate directly to the APIs page for the client app using the URL +
@@ -365,7 +366,7 @@ https://localhost:8443/apiman-gateway/ProviderOrg/echo/1.0?apikey=591c4999-c9d7-
 }
 ----
 
-. Continue to invoke the API until you hit the rate limit: 
+. Continue to invoke the API until you hit the rate limit, as shown in the response below: 
 +
 [source]
 ----
@@ -376,9 +377,14 @@ https://localhost:8443/apiman-gateway/ProviderOrg/echo/1.0?apikey=591c4999-c9d7-
 
 == Summary
 
-This article has shown you how to get up and running with apiman, an open-source API managment and gateway offering. You should now be able to publish an API for a provider organization with a rate-limiting policy, and test that policy using a client application associated with a consumer organization. 
+This article has shown you how to get up and running with apiman, an open-source API management and gateway offering. 
+You should now be able to publish an API for a provider organization with a rate-limiting policy, and test that policy using a client application 
+associated with a consumer organization. If you would like to know more about apiman functionality in general and how to progress to using the software in a production environment, check the Resources section below.
 
-This article is based on the "Crash Course in Apiman" document which provides a more comprehensive introduction to apiman. It is available on the apiman website at http://www.apiman.io/latest/crash-course.html. If you would like to know more about apiman functionality in general and how to progress to using the software in a production environment, check the Resources section below.
+
+This article is based on the "Crash Course in Apiman" document which provides a more comprehensive introduction to apiman. 
+It is available on the apiman website at http://www.apiman.io/latest/crash-course.html. 
+
 
 == Resources
 
